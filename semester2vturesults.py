@@ -8,7 +8,7 @@ def func(x):
     elif(x>=40 and x<45):
         return 4
     elif(x<40):
-        return 0
+        return 0   #student failed the subject
     elif(x%10==0):
         return math.ceil(x/10)+1;
     elif(x%10!=0):
@@ -27,7 +27,9 @@ while(i<187):
            r=requests.get(url);
         except:
             r=requests.get(url);
-    soup=BeautifulSoup(r.content,"html.parser")
+            #using beautiful soap to parse the html document
+    soup=BeautifulSoup(r.content,"html.parser") 
+    
     table=soup.find('table',{'class':'table table-bordered'})
     arr=[]
     
